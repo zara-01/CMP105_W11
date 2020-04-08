@@ -7,13 +7,13 @@
 #include "Framework/GameState.h"
 #include <string>
 #include <iostream>
-#include "Player.h"
 
 
-class Level{
+
+class menu {
 public:
-	Level(sf::RenderWindow* hwnd, Input* in, GameState* gs, AudioManager* aud);
-	~Level();
+	menu(sf::RenderWindow* hwnd, Input* in, GameState* gs, AudioManager* aud);
+	~menu();
 
 	void handleInput(float dt);
 	void update(float dt);
@@ -31,7 +31,15 @@ private:
 	GameState* gameState;
 	AudioManager* audio;
 
-	sf::Texture texture;
-	Player playerone;
+	sf::CircleShape circle;
+	sf::RectangleShape rect;
+
+	float speed;
+
+	float x_speed;
+	float y_speed;
+
+	float x_rectSpeed;
+	float y_rectSpeed;
 
 };
